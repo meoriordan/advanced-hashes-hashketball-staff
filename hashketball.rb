@@ -73,5 +73,18 @@ def player_numbers(name)
 	end 
 end
 
-
+def player_stats(n)
+	game_hash[:home][:players].each do |x|
+		if x[:player_name] == n
+		# 	puts x
+			return x
+		end
+	end
+	game_hash[:away][:players].each do |x|
+		if x[:player_name] == n
+		# 	puts x
+			return x
+		end
+	end
+end
 

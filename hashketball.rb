@@ -125,4 +125,22 @@ def most_points_scored
 	# return biggest_shoe
 end
 
+def winning_team
+	s_home = 0 
+	s_away = 0 
+	game_hash[:home][:players].each do |x|
+		s_home += x[:points]
+	end
+	game_hash[:away][:players].each do |x|
+		s_away += x[:points]
+	end
+	if s_home > s_away 
+		return game_hash[:home][:team_name]
+	else 
+		return game_hash[:away][:team_name]
+	end
+	# s_home > s_away ? puts( s_home ): puts (s_away) 
+end
+winning_team
+
 

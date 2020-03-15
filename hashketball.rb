@@ -160,5 +160,26 @@ def player_with_longest_name
 	return n 
 end
 
+def long_name_steals_a_ton
+	long_name = player_with_longest_name
+	l = 0  
+	n = ''
+	game_hash[:home][:players].each do |x|
+		if x[:steals] > l 
+			l = x[:steals]
+			n = x[:player_name]
+		end
+	end
+	game_hash[:away][:players].each do |x|
+		if x[:steals] > l 
+			l = x[:steals] 
+			n = x[:player_name]
+		end
+	end
+	return long_name == n 
+	# return n 
+end
+
+
 
 

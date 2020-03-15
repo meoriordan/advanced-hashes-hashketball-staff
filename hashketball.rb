@@ -141,6 +141,24 @@ def winning_team
 	end
 	# s_home > s_away ? puts( s_home ): puts (s_away) 
 end
-winning_team
+
+def player_with_longest_name
+	l = 0  
+	n = ''
+	game_hash[:home][:players].each do |x|
+		if x[:player_name].length > l 
+			l = x[:player_name].length 
+			n = x[:player_name]
+		end
+	end
+	game_hash[:away][:players].each do |x|
+		if x[:player_name].length > l 
+			l = x[:player_name].length 
+			n = x[:player_name]
+		end
+	end
+	return n 
+end
+
 
 

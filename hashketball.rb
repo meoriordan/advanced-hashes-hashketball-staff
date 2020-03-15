@@ -88,3 +88,21 @@ def player_stats(n)
 	end
 end
 
+def big_shoe_rebounds()
+	biggest_shoe = 0
+	reb = 0
+	game_hash[:home][:players].each do |x|
+		if x[:shoe] > biggest_shoe 
+			biggest_shoe = x[:shoe]
+			reb = x[:rebounds]
+		end
+	end
+	game_hash[:away][:players].each do |x|
+		if x[:shoe] > biggest_shoe 
+			biggest_shoe = x[:shoe]
+			reb = x[:rebounds]
+		end
+	end
+	return reb
+end
+

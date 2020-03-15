@@ -57,7 +57,21 @@ def team_names
   return n
 end
 
-
+def player_numbers(name)
+	n = []
+	if game_hash[:home][:team_name] == name 
+		game_hash[:home][:players].each do |x|
+			n << x[:number]
+		end 
+		return n 
+	end 
+	if game_hash[:home][:team_name] == name 
+		game_hash[:home][:players].each do |x|
+			n << x[:number]
+		end 
+		return n 
+	end 
+end
 
 
 

@@ -83,7 +83,7 @@ def player_stats(n)
 	game_hash[:away][:players].each do |x|
 		if x[:player_name] == n
 		# 	puts x
-			return x
+			return x.reject {|k,v| [:player_name].include? k}
 		end
 	end
 end
